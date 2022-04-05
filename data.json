@@ -1,5 +1,14 @@
-{
-  "food": [],
-  "cocktails": [],
-  "wine": []
-}
+[
+  {
+    "name": "food",
+    "items": []
+  },
+  {
+    "name": "wine",
+    "items": []
+  },
+  {
+    "name": "cocktails",
+    "items": []
+  }
+]
