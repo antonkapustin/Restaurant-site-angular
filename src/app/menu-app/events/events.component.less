@@ -1,0 +1,36 @@
+.events {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-family: "Mulish", sans-serif;
+  }
+  &__list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 6px #f1d5bb solid;
+    margin-bottom: 60px;
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+
+    &_large {
+      font-size: 4em;
+      color: #b31212;
+      @media screen and (max-width: 1024px) {
+        font-size: 2em;
+      }
+    }
+    &_small {
+      font-size: 2em;
+      @media screen and (max-width: 1024px) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}

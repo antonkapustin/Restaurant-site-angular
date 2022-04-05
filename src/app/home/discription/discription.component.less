@@ -1,0 +1,47 @@
+@import url("./../../../variables.less");
+.discription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    justify-content: space-around;
+  }
+
+  &__title {
+    font-family: "Mulish", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 4.4em;
+    font-weight: 100;
+    color: @color-white;
+    line-height: 75.3px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.4em;
+    }
+
+    &_bold {
+      font-weight: 900;
+      font-size: 1em;
+    }
+  }
+  &__subtitle {
+    font-family: "Mulish", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.82em;
+    color: @color-white;
+    width: 55ch;
+
+    @media screen and (max-width: 1024px) {
+      width: unset;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.3em;
+    }
+  }
+}
