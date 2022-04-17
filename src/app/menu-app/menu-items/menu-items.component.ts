@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewEncapsulation,
+} from "@angular/core";
+import { IData } from "data.interfese";
+import { BehaviorSubject } from "rxjs";
+import { HttpService } from "src/app/http.service";
 
 @Component({
   selector: "app-menu-items",
@@ -7,7 +15,10 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
   encapsulation: ViewEncapsulation.None,
 })
 export class MenuItemsComponent implements OnInit {
-  constructor() {}
+  categories$: BehaviorSubject<IData[]> = this.http.getItems$();
+  constructor(private http: HttpService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http.getData().subscribe();
+  }
 }

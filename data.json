@@ -1,7 +1,9 @@
 [
   {
     "name": "food",
-    "items": []
+    "items": [
+      "https://github.com/antonkapustin/Restaurant-site-angular/blob/main/src/assets/pictures/food/manu-page2.jpeg"
+    ]
   },
   {
     "name": "wine",
