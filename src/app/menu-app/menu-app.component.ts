@@ -1,17 +1,18 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
-  selector: 'app-menu-app',
-  templateUrl: './menu-app.component.html',
-  styleUrls: ['./menu-app.component.less'],
+  selector: "app-menu-app",
+  templateUrl: "./menu-app.component.html",
+  styleUrls: ["./menu-app.component.less"],
   encapsulation: ViewEncapsulation.None,
 })
-export class MenuAppComponent implements OnInit {
-  name = '';
-  constructor(private route: Router) {}
+export class MenuAppComponent {
+  name = "menu";
+  onActivate(event: any): void {
+    document.body.classList.add(`page_${event.name}`);
+  }
 
-  ngOnInit(): void {
-    this.route.navigate(['menu/food']);
+  onDeactivate(event: any): void {
+    document.body.classList.remove(`page_${event.name}`);
   }
 }

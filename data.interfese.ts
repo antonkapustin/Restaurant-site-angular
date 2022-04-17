@@ -1,3 +1,4 @@
 export interface IData {
-  [key: string]: string[];
+  name: string;
+  items: string[];
 }

@@ -1,14 +1,13 @@
-import { InterpolationConfig } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.less'],
+  selector: "app-button",
+  templateUrl: "./button.component.html",
+  styleUrls: ["./button.component.less"],
 })
 export class ButtonComponent implements OnInit {
-  @Input() title: string = '';
-  @Input() class: string = '';
+  @Input() title: string = "";
+  @Input() class: string = "";
 
   constructor() {}
 
