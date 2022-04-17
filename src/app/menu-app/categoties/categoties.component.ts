@@ -16,12 +16,14 @@ import { HttpService } from "src/app/http.service";
 })
 export class CategotiesComponent implements OnInit {
   categories$: BehaviorSubject<IData[]> = this.http.getItems$();
-
+  data: IData[] = [];
+  menu!: IData;
   constructor(private http: HttpService, private hostElement: ElementRef) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.http.getData().subscribe();
-    console.log(this.categories$.getValue());
+    this.data = this.categories$.getValue();
+    this.menu = this.data[0];
   }
 
   onClick(event: Event) {
@@ -36,5 +38,9 @@ export class CategotiesComponent implements OnInit {
     if (current === this.hostElement.nativeElement) {
       return;
     }
+    let newData = this.data.filter((el) => {
+      return el.name === current.value;
+    });
+    console.log(...newData);
   }
 }

@@ -2,6 +2,7 @@
 <div class="categories__slider">
   <button
     class="categories__button"
+    value="{{ item.name }}"
     type="button"
     *ngFor="let item of categories$ | async"
   >

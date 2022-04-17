@@ -8,6 +8,7 @@ import { IData } from "data.interfese";
 })
 export class HttpService {
   items$: BehaviorSubject<IData[]> = new BehaviorSubject<IData[]>([]);
+  items!: IData[];
   private api =
     "https://raw.githubusercontent.com/antonkapustin/Restaurant-site-angular/main/data.json";
 
@@ -21,12 +22,15 @@ export class HttpService {
       }),
       catchError(this.handleError<any>("GetData"))
     );
-
     return data;
   }
 
   private updateItems(data: IData[]): void {
     this.items$.next(data);
+  }
+  async getItems(): Promise<IData[]> {
+    let data = await this.items$.getValue();
+    return data;
   }
 
   getItems$(): BehaviorSubject<IData[]> {
