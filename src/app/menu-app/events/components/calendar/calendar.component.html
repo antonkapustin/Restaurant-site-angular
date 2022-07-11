@@ -1,0 +1,10 @@
+<div class="calendar__days">
+  <span class="calendar__days-name" *ngFor="let item of weekdays">{{
+    item
+  }}</span>
+</div>
+<div class="calendar">
+  <ng-container *ngFor="let weeks of calendar">
+    <app-calendar-week [week]="weeks"></app-calendar-week>
+  </ng-container>
+</div>

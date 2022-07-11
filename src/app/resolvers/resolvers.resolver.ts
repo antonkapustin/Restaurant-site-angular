@@ -7,7 +7,7 @@ import {
 } from "@angular/router";
 import { IData } from "data.interfese";
 import { catchError, delay, EMPTY, Observable, of } from "rxjs";
-import { HttpService } from "../http.service";
+import { HttpService } from "../services/http-service/http.service";
 
 @Injectable({
   providedIn: "root",

@@ -6,7 +6,7 @@ import {
 } from "@angular/core";
 import { IData } from "data.interfese";
 import { BehaviorSubject } from "rxjs";
-import { HttpService } from "src/app/http.service";
+import { HttpService } from "src/app/services/http-service/http.service";
 
 @Component({
   selector: "app-categoties",

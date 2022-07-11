@@ -1,0 +1,14 @@
+<div
+  class="calendar-day__inner"
+  [class.calendar-day__inner_disabled]="day.disabled"
+  [class.calendar-day__inner_selected]="day.selected"
+  (click)="select(day.value)"
+>
+  <div class="calendar-day__header">
+    <span
+      class="calendar-day__date"
+      [class.calendar-day__date_active]="day.active"
+      >{{ day.value | moment: "DD" }}</span
+    >
+  </div>
+</div>

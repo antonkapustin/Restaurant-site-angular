@@ -1,15 +1,7 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  ViewEncapsulation,
-} from "@angular/core";
+import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 import { IData } from "data.interfese";
 import { BehaviorSubject } from "rxjs";
-import { HttpService } from "src/app/http.service";
+import { HttpService } from "src/app/services/http-service/http.service";
 
 @Component({
   selector: "app-menu-items",
@@ -17,16 +9,12 @@ import { HttpService } from "src/app/http.service";
   styleUrls: ["./menu-items.component.less"],
   encapsulation: ViewEncapsulation.None,
 })
-export class MenuItemsComponent implements OnInit, OnChanges {
+export class MenuItemsComponent implements OnInit {
   @Input() menu!: string[];
   categories$: BehaviorSubject<IData[]> = this.http.getItems$();
   constructor(private http: HttpService) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.menu);
-  }
 
   ngOnInit(): void {
     this.http.getData().subscribe();
-    console.log(this.menu);
   }
 }
