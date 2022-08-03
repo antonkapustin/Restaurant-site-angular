@@ -8,7 +8,5 @@ import { Week } from "../../calendar.component";
 })
 export class CalendarWeekComponent {
   @Input() week!: Week;
-  constructor() {
-    console.log(this.week);
-  }
+  constructor() {}
 }

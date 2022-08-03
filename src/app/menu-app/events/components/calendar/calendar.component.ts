@@ -21,8 +21,8 @@ export class CalendarComponent {
   getAllMounth(now: moment.Moment) {
     const calendar = [];
     const today = moment();
-    const startDay = today.clone().startOf("month").startOf("week");
-    const endDay = today.clone().endOf("month").endOf("week");
+    const startDay = today.clone().startOf("isoWeek");
+    const endDay = today.clone().endOf("isoWeek");
 
     let date = startDay.clone().subtract(1, "day");
 
@@ -46,6 +46,5 @@ export class CalendarComponent {
       });
 
     this.calendar = calendar;
-    console.log(this.calendar);
   }
 }

@@ -11,12 +11,13 @@
   width: 154px;
   height: 829px;
   position: fixed;
-  top: 15px;
+  top: 50%;
   left: 67px;
-  background-color: #0c0b0b;
+  background-color: @color-back;
   border-radius: 24px;
   box-shadow: 31px 21px 19px 0px rgb(34 60 80 / 18%);
   z-index: 1;
+  transform: translate(0px, -50%);
 
   @media screen and (max-width: 1024px) {
     bottom: 0;
@@ -58,11 +59,11 @@
     }
 
     &:hover {
-      background-color: #f1d5bb;
-      color: black;
+      background-color: @color-red;
+      color: @color-back;
 
       &:first-child {
-        background-color: #0c0b0b;
+        background-color: @color-back;
         border-radius: 24px;
       }
 
@@ -75,7 +76,7 @@
     }
 
     &_active {
-      background-color: #f1d5bb;
+      background-color: @color-red;
       color: black;
       @media screen and (max-width: 1024px) {
         background-color: unset;
@@ -85,7 +86,7 @@
   }
   &__link {
     padding: 46px 53px;
-    color: white;
+    color: @color-white;
     font-size: 2.7em;
     margin: 0;
     @media screen and (max-width: 1024px) {

@@ -1,34 +1,21 @@
 @import "variables.less";
 
 :host {
-  border: 1px solid;
 }
 .calendar-day {
   &__inner {
-    height: 50px;
-    background-color: @color-white;
-    padding: 5px;
+    height: 388px;
+    width: 368px;
+    padding: 16px;
     box-sizing: border-box;
     text-align: end;
-
-    &_disabled {
-      background-color: @color-gray;
-      filter: opacity(0.3);
-      pointer-events: none;
-    }
-    &_selected {
-      background-color: @color-gray;
-    }
-    &:hover {
-      background-color: @color-gray;
-      cursor: pointer;
-    }
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: -1px 1px 4px rgb(58 70 93 / 12%);
+    background-color: @color-white;
   }
   &__date {
-    &_active {
-      background-color: @color-red;
-      padding: 3px;
-      border-radius: 50%;
-    }
+    font-size: 20px;
+    color: @color-back;
   }
 }
