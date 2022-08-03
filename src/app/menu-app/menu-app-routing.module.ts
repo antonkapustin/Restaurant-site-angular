@@ -20,7 +20,7 @@ const routes: Routes = [
         // },
       },
       { path: "events", component: EventsComponent },
-      { path: "location", component: LocationComponent },
+      { path: "about", component: LocationComponent },
       { path: "", redirectTo: "food", pathMatch: "full" },
     ],
   },
