@@ -1,7 +1,6 @@
 import { Component, Input } from "@angular/core";
 import * as moment from "moment";
 import { BehaviorSubject } from "rxjs";
-import { CalendarWeekService } from "src/app/services/calendar/calendar-week.service";
 import { TaskService } from "src/app/services/calendar/task.service";
 import { Task } from "src/app/services/calendar/task.service";
 
@@ -20,14 +19,15 @@ export interface Day {
 export class CalendarDayComponent {
   @Input() day!: Day;
   task$: BehaviorSubject<Task> = this.taskService.getItems$();
-  constructor(
-    private calendarService: CalendarWeekService,
-    private taskService: TaskService
-  ) {}
+  constructor(private taskService: TaskService) {}
 
   loadImg(day: moment.Moment): string {
     let data = this.task$.getValue();
-    console.log(Object.keys(data));
-    return "";
+    let date = day.format("DD.MM.YYYY");
+    if (!data[date]) {
+      return "";
+    } else {
+      return data[date];
+    }
   }
 }

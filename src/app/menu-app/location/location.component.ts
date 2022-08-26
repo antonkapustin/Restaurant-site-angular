@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: "app-location",
@@ -6,8 +6,6 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
   styleUrls: ["./location.component.less"],
   encapsulation: ViewEncapsulation.None,
 })
-export class LocationComponent implements OnInit {
+export class LocationComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 }

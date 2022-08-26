@@ -1,4 +1,10 @@
 <div class="calendar-day__inner">
+  <img
+    *ngIf="loadImg(day.value)"
+    class="calendar-day__img"
+    [src]="loadImg(day.value)"
+    alt="picture-events"
+  />
   <div class="calendar-day__header">
     <span
       class="calendar-day__date"
@@ -6,9 +12,4 @@
       >{{ day.value | moment: "ddd DD" }}</span
     >
   </div>
-  <img
-    class="calendar-day__img"
-    [src]="loadImg(day.value)"
-    alt="picture-events"
-  />
 </div>
