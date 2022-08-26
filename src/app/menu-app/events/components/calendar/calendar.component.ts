@@ -46,5 +46,6 @@ export class CalendarComponent {
       });
 
     this.calendar = calendar;
+    console.log(this.calendar);
   }
 }

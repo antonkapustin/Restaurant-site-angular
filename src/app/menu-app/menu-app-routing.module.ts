@@ -15,9 +15,6 @@ const routes: Routes = [
       {
         path: "food",
         component: MenuComponent,
-        // resolve: {
-        //   food: ResolversResolver,
-        // },
       },
       { path: "events", component: EventsComponent },
       { path: "about", component: LocationComponent },

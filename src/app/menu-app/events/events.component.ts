@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { TaskService } from "src/app/services/calendar/task.service";
 
 @Component({
   selector: "app-events",
@@ -8,7 +9,9 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 })
 export class EventsComponent implements OnInit {
   name = "events";
-  constructor() {}
+  constructor(private taskService: TaskService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.taskService.loadTasks().subscribe();
+  }
 }

@@ -1,11 +1,12 @@
 import {
   Component,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewEncapsulation,
 } from "@angular/core";
 import { IData } from "data.interfese";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Subscription } from "rxjs";
 import { HttpService } from "src/app/services/http-service/http.service";
 
 @Component({
@@ -14,17 +15,18 @@ import { HttpService } from "src/app/services/http-service/http.service";
   styleUrls: ["./menu.component.less"],
   encapsulation: ViewEncapsulation.None,
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnDestroy {
   data$: BehaviorSubject<IData[]> = this.http.getItems$();
   data: IData[] = [];
   menu!: string[];
+  subscriptions: Subscription[] = [];
   constructor(private hostElement: ElementRef, private http: HttpService) {}
 
   ngOnInit(): void {
-    this.http.getData().subscribe();
+    let subscription$ = this.http.getData().subscribe();
     this.data = this.data$.getValue();
     this.menu = this.data[0].items;
-    console.log();
+    this.subscriptions.push(subscription$);
   }
   onClick(event: Event) {
     let current = event.target as HTMLButtonElement;
@@ -43,5 +45,10 @@ export class MenuComponent implements OnInit {
       return el.name === current.value;
     });
     this.menu = newData[0].items;
+  }
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((item) => {
+      item.unsubscribe();
+    });
   }
 }
